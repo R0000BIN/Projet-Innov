@@ -1,0 +1,36 @@
+* {
+    color: white;
+}
+
+.greenbutton {
+    background-color: green;
+}
+
+.redbutton {
+    background-color: red;
+}
+
+.redbutton, .greenbutton {
+    padding: 15px;
+    border-radius: 15px;
+    text-decoration: none;
+}
+
+section {
+    display: flex;
+    align-content: space-around;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pub {
+    background-color: blue;
+}
