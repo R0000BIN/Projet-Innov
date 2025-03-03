@@ -41,9 +41,9 @@ const dependance_ia = [
 
 // Thème : Éthique et conséquences
 const ethique_consequences = [
-    { name: "Connaissez-vous l’impact environnemental de l’utilisation de Chat GPT ?", type: "yn", score: 0},
-    { name: "Avez-vous diminué votre utilisation à cause de ça ?", type: "yn", score: 8},
-    { name: "Avez-vous déjà utilisé une IA pour draguer quelqu’un en lui faisant croire que c'était vous qui écriviez ?", type: "yn", score: 12},
+    { name: "Connaissez-vous l’impact environnemental de l’utilisation de Chat GPT ?", type: "ny", score: 4},
+    { name: "Avez-vous diminué votre utilisation à cause de ça ?", type: "ny", score: 8},
+    { name: "Avez-vous déjà utilisé une IA pour draguer quelqu’un en lui faisant croire que c'était vous qui écriviez ?", type: "yn", score: 8},
     { name: "Avez-vous déjà demandé à une IA de générer du contenu illégal (recette pour faire des space cookies, images pornographiques) ?", type: "yn", score: 20},
     { name: "Avez-vous déjà utilisé une IA pour tricher à un examen ou un test ?", type: "yn", score: 16},
     {name : "Combien de fois ?", type: "mulTriche", score: 2},
@@ -87,6 +87,11 @@ function updateButtons(type,Qscore) {
     if (type === "yn") {
         createButton("OUI", "green", Qscore);
         createButton("NON", "red", 0);
+    }
+
+    if (type === "ny") {
+        createButton("OUI", "green", 0);
+        createButton("NON", "red", Qscore);
     }
 
     if (type === "mulSemaine") {
