@@ -203,6 +203,8 @@ function handleAnswer(value) {
     if (value === 0 && currentCategory.questions[compteur]?.type.startsWith("mul")) {
         compteur++;
     }
+    
+    compteur++;
 
     if (compteur < currentCategory.questions.length) {
         question.textContent = currentCategory.questions[compteur].name;
@@ -213,16 +215,15 @@ function handleAnswer(value) {
         compteur = 0;
 
         if (currentCategoryIndex < categories.length) {
-            question.textContent = categories[currentCategoryIndex].questions[compteur].name;
-            theme.textContent = categories[currentCategoryIndex].name;
-            updateButtons(categories[currentCategoryIndex].questions[compteur].type,currentCategory.questions[compteur].score);
-            compteur++;
+            const nextCategory = categories[currentCategoryIndex];
+            question.textContent = nextCategory.questions[compteur].name;
+            theme.textContent = nextCategory.name;
+            updateButtons(nextCategory.questions[compteur].type,nextCategory.questions[compteur].score);
         } else {
             scoreFinal(score);
             divButtons.innerHTML = ""; // Supprimer les boutons à la fin
         }
     }
-    compteur++;
 }
 
 // Initialisation
