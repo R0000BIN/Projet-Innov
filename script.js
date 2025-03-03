@@ -73,7 +73,7 @@ const categories = [
 
 // Variables
 var compteur=1;
-let score=[0,0,0,0];
+let score=[0.0,0.0,0.0,0.0];
 let currentCategoryIndex = 0;
 
 
@@ -202,7 +202,7 @@ function handleAnswer(value) {
     if (compteur < currentCategory.questions.length) {
         question.textContent = currentCategory.questions[compteur].name;
         theme.textContent = currentCategory.name;
-        updateButtons(currentCategory.questions[compteur].type);
+        updateButtons(currentCategory.questions[compteur].type,currentCategory.questions[compteur].score);
         compteur++;
     } else {
         currentCategoryIndex++;
@@ -211,7 +211,7 @@ function handleAnswer(value) {
         if (currentCategoryIndex < categories.length) {
             question.textContent = categories[currentCategoryIndex].questions[compteur].name;
             theme.textContent = categories[currentCategoryIndex].name;
-            updateButtons(categories[currentCategoryIndex].questions[compteur].type);
+            updateButtons(categories[currentCategoryIndex].questions[compteur].type,currentCategory.questions[compteur].score);
             compteur++;
         } else {
             scoreFinal(score);
