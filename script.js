@@ -15,7 +15,7 @@ const conso_energetique = [
     {name : "Utilisez-vous une IA générative : au moins une fois par mois ?", type: "yn", score: 0},
     {name : "Utilisez-vous une IA générative : au moins une fois par semaine ?", type: "yn", score: 0},
     {name : "Combien de requêtes faites-vous par semaine (en moyenne) ?", type: "mulSemaine", score: 0.01},
-    {name : "Avez-vous déjà généré des textes longs (lettre de motivation, mémoire…) ?", type: "yn", score: 1},
+    {name : "Avez-vous déjà généré des textes longs (lettre de motivation, mémoire…) ?", type: "yn", score: 0},
     {name : "Combien de fois ?", type: "mulLong", score: 0.0004},
     {name : "Avez-vous déjà généré des images/vidéos ?", type: "yn", score: 0},
     {name : "Combien de fois ?", type: "mulImage", score: 0.02},
