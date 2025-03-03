@@ -112,6 +112,12 @@ function updateButtons(type) {
         createButton("10", "blue", 4);
         createButton("+10", "blue", 5);
     }
+
+    if (type === "napoleon") {
+        createButton("1789", "blue", 0);
+        createButton("1779", "blue", 0);
+        createButton("1769", "blue", 1);
+    }
 }
 
 // Création des boutons avec style
