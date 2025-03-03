@@ -149,6 +149,12 @@ function updateButtons(type,Qscore) {
         createButton("10", "blue", 10*Qscore);
         createButton("+10", "blue", 40);
     }
+
+    if (type === "napoleon") {
+        createButton("1789", "blue", 0);
+        createButton("1779", "blue", 0);
+        createButton("1769", "blue", 1);
+    }
 }
 
 // Création des boutons avec style
