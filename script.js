@@ -195,7 +195,7 @@ function handleAnswer(value) {
     score[currentCategoryIndex] += value;
 
     // Vérifier si on doit sauter la prochaine question
-    if (value === 0 && currentCategory.questions[compteur].type.startsWith("mul")) {
+    if (value === 0 && currentCategory.questions[compteur]?.type.startsWith("mul")) {
         compteur++;
     }
 
@@ -203,7 +203,6 @@ function handleAnswer(value) {
         question.textContent = currentCategory.questions[compteur].name;
         theme.textContent = currentCategory.name;
         updateButtons(currentCategory.questions[compteur].type,currentCategory.questions[compteur].score);
-        compteur++;
     } else {
         currentCategoryIndex++;
         compteur = 0;
@@ -218,6 +217,7 @@ function handleAnswer(value) {
             divButtons.innerHTML = ""; // Supprimer les boutons à la fin
         }
     }
+    compteur++;
 }
 
 // Initialisation
