@@ -57,7 +57,7 @@ const pertinence = [
     { name: "Avez-vous déjà posé des questions 'borderline' à Chat GPT ?", type: "yn", score: 16},
     { name: "Avez-vous déjà généré une image avec une IA juste pour voir des boobs ?", type: "yn", score: 20},
     { name: "Avez-vous déjà utilisé une IA générative juste pour prouver qu’elle était nulle ?", type: "yn", score: 8},
-    { name: "Quelle est la date de naissance de Napoléon Bonaparte ?", type: "date", score: 4},
+    { name: "Quelle est la date de naissance de Napoléon Bonaparte ?", type: "napoleon", score: 4},
     { name: "Avez-vous utilisé l’IA pour répondre à cette question ?", type: "yn", score: 20},
     { name: "Avez-vous effectué un des actes de ce test exprès pour améliorer votre score ?", type: "yn", score: 16}
 ];
@@ -86,7 +86,7 @@ function updateButtons(type,Qscore) {
 
     if (type === "yn") {
         createButton("OUI", "green", Qscore);
-        createButton("NON", "red", -Qscore);
+        createButton("NON", "red", 0);
     }
 
     if (type === "mulSemaine") {
@@ -153,7 +153,7 @@ function updateButtons(type,Qscore) {
     if (type === "napoleon") {
         createButton("1789", "blue", 0);
         createButton("1779", "blue", 0);
-        createButton("1769", "blue", 1);
+        createButton("1769", "blue", Qscore);
     }
 }
 
@@ -195,8 +195,8 @@ function handleAnswer(value) {
     score[currentCategoryIndex] += value;
 
     // Vérifier si on doit sauter la prochaine question
-    if (value === -1 && (currentCategory.questions[compteur].type === "mul10" || currentCategory.questions[compteur].type ==="mul100" || currentCategory.questions[compteur].type ==="mul500")) {
-        compteur ++;
+    if (value === 0 && currentCategory.questions[compteur].type.startsWith("mul")) {
+        compteur++;
     }
 
     if (compteur < currentCategory.questions.length) {
