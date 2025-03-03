@@ -11,17 +11,17 @@ let theme = document.getElementById('theme');
 
 // Thème : Empreinte Carbone
 const conso_energetique = [
-    {name : "Avez-vous déjà utilisé Chat GPT ?", type: "yn", score: 0},
-    {name : "Utilisez-vous une IA générative : au moins une fois par mois ?", type: "yn", score: 0},
-    {name : "Utilisez-vous une IA générative : au moins une fois par semaine ?", type: "yn", score: 0},
+    {name : "Avez-vous déjà utilisé Chat GPT ?", type: "yn", score: 0.0001},
+    {name : "Utilisez-vous une IA générative : au moins une fois par mois ?", type: "yn", score: 0.0001},
+    {name : "Utilisez-vous une IA générative : au moins une fois par semaine ?", type: "yn", score: 0.0001},
     {name : "Combien de requêtes faites-vous par semaine (en moyenne) ?", type: "mulSemaine", score: 0.01},
-    {name : "Avez-vous déjà généré des textes longs (lettre de motivation, mémoire…) ?", type: "yn", score: 0},
+    {name : "Avez-vous déjà généré des textes longs (lettre de motivation, mémoire…) ?", type: "yn", score: 1},
     {name : "Combien de fois ?", type: "mulLong", score: 0.0004},
-    {name : "Avez-vous déjà généré des images/vidéos ?", type: "yn", score: 0},
+    {name : "Avez-vous déjà généré des images/vidéos ?", type: "yn", score: 0.0001},
     {name : "Combien de fois ?", type: "mulImage", score: 0.02},
-    {name : "Avez-vous déjà demandé d’effectuer des calculs mathématiques (résoudre des équations, des intégrales ou des problèmes de logique) ?", type: "yn", score: 0},
+    {name : "Avez-vous déjà demandé d’effectuer des calculs mathématiques (résoudre des équations, des intégrales ou des problèmes de logique) ?", type: "yn", score: 0.0001},
     {name : "Combien de fois ?", type: "mulMaths", score: 0.002},
-    {name : "Avez-vous déjà utilisé la version performante de Chat GPT (raisonnement poussé) ?", type: "yn", score: 0},
+    {name : "Avez-vous déjà utilisé la version performante de Chat GPT (raisonnement poussé) ?", type: "yn", score: 0.0001},
     {name : "Combien de fois ?", type: "mulPousse", score: 0.008},
     {name : "Combien d’IA différentes utilisez-vous ?", type: "mul10", score: 0.01},
     {name : "Combien de lignes font vos prompts (en moyenne) ?", type:"mul10", score: 0.01}
@@ -206,7 +206,7 @@ function handleAnswer(value) {
 
     if (compteur < currentCategory.questions.length) {
         question.textContent = currentCategory.questions[compteur].name;
-        theme.textContent = currentCategory.name+" "+score[currentCategoryIndex];
+        theme.textContent = currentCategory.name;
         updateButtons(currentCategory.questions[compteur].type,currentCategory.questions[compteur].score);
     } else {
         currentCategoryIndex++;
@@ -214,7 +214,7 @@ function handleAnswer(value) {
 
         if (currentCategoryIndex < categories.length) {
             question.textContent = categories[currentCategoryIndex].questions[compteur].name;
-            theme.textContent = categories[currentCategoryIndex].name+" "+score[currentCategoryIndex];
+            theme.textContent = categories[currentCategoryIndex].name;
             updateButtons(categories[currentCategoryIndex].questions[compteur].type,currentCategory.questions[compteur].score);
             compteur++;
         } else {
