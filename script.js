@@ -10,7 +10,7 @@ let question = document.getElementById('question');
 let theme = document.getElementById('theme');
 
 // Thème : Empreinte Carbone
-const empreinte_carbone = [
+const conso_energetique = [
     {name : "Avez-vous déjà utilisé Chat GPT ?", type: "yn", score: 0},
     {name : "Utilisez-vous une IA générative : au moins une fois par mois ?", type: "yn", score: 0},
     {name : "Utilisez-vous une IA générative : au moins une fois par semaine ?", type: "yn", score: 0},
@@ -64,7 +64,7 @@ const pertinence = [
 
 // Tableau contenant toutes les catégories de questions
 const categories = [
-    { name: "Empreinte Carbone", questions: empreinte_carbone },
+    { name: "Consommation Energétique", questions: conso_energetique },
     { name: "Dépendance à l'IA", questions: dependance_ia },
     { name: "Éthique et conséquences", questions: ethique_consequences },
     { name: "Pertinence", questions: pertinence }
