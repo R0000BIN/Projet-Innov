@@ -201,7 +201,7 @@ function handleAnswer(value) {
 
     if (compteur < currentCategory.questions.length) {
         question.textContent = currentCategory.questions[compteur].name;
-        theme.textContent = currentCategory.name;
+        theme.textContent = currentCategory.name+" "+score[currentCategoryIndex];
         updateButtons(currentCategory.questions[compteur].type,currentCategory.questions[compteur].score);
     } else {
         currentCategoryIndex++;
@@ -209,7 +209,7 @@ function handleAnswer(value) {
 
         if (currentCategoryIndex < categories.length) {
             question.textContent = categories[currentCategoryIndex].questions[compteur].name;
-            theme.textContent = categories[currentCategoryIndex].name;
+            theme.textContent = categories[currentCategoryIndex].name+" "+score[currentCategoryIndex];
             updateButtons(categories[currentCategoryIndex].questions[compteur].type,currentCategory.questions[compteur].score);
             compteur++;
         } else {
