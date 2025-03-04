@@ -7,6 +7,7 @@ let divButtons = document.getElementById('DivButtons');
 
 // Définition texte a changer :
 let question = document.getElementById('question');
+//question.style.fontFamily = "'Comic Sans MS', cursive, sans-serif"; // Modifier la police des questions
 let theme = document.getElementById('theme');
 
 // Thème : Empreinte Carbone
@@ -85,74 +86,74 @@ function updateButtons(type,Qscore) {
     divButtons.style.alignItems = "center"; // Centrer les boutons
 
     if (type === "yn") {
-        createButton("OUI", "green", Qscore);
-        createButton("NON", "red", 0);
-    }
+        createButton("OUI", "rgb(93, 193, 93)", "rgb(75, 156, 75)", Qscore);
+        createButton("NON", "rgb(217, 83, 79)", "rgb(176, 68, 64)", 0);
+    }    
 
     if (type === "ny") {
-        createButton("OUI", "green", 0);
-        createButton("NON", "red", Qscore);
+        createButton("OUI", "rgb(93, 193, 93)", "rgb(75, 156, 75)", 0);
+        createButton("NON", "rgb(217, 83, 79)", "rgb(176, 68, 64)", Qscore);
     }
 
     if (type === "mulSemaine") {
-        createButton("1", "blue", 1*Qscore);
-        createButton("5", "blue", 5*Qscore);
-        createButton("10", "blue", 10*Qscore);
-        createButton("50", "blue", 50*Qscore);
-        createButton("100", "blue", 100*Qscore);
-        createButton("+100", "blue", 1.5);
+        createButton("1", "rgb(78,170,247)", "rgb(37, 150, 190)", 1*Qscore);
+        createButton("5", "rgb(78,170,247)", "rgb(37, 150, 190)", 5*Qscore);
+        createButton("10", "rgb(78,170,247)", "rgb(37, 150, 190)", 10*Qscore);
+        createButton("50", "rgb(78,170,247)", "rgb(37, 150, 190)", 50*Qscore);
+        createButton("100", "rgb(78,170,247)", "rgb(37, 150, 190)", 100*Qscore);
+        createButton("+100", "rgb(78,170,247)", "rgb(37, 150, 190)", 1.5);
     }
 
     if (type === "mulImage") {
-        createButton("1", "blue", 1*Qscore);
-        createButton("10", "blue", 10*Qscore);
-        createButton("50", "blue", 50*Qscore);
-        createButton("100", "blue", 100*Qscore);
-        createButton("500", "blue", 500*Qscore);
-        createButton("+500", "blue", 15);
+        createButton("1", "rgb(78,170,247)", "rgb(37, 150, 190)", 1*Qscore);
+        createButton("10", "rgb(78,170,247)", "rgb(37, 150, 190)", 10*Qscore);
+        createButton("50", "rgb(78,170,247)", "rgb(37, 150, 190)", 50*Qscore);
+        createButton("100", "rgb(78,170,247)", "rgb(37, 150, 190)", 100*Qscore);
+        createButton("500", "rgb(78,170,247)", "rgb(37, 150, 190)", 500*Qscore);
+        createButton("+500", "rgb(78,170,247)", "rgb(37, 150, 190)", 15);
     }
 
     if (type === "mulLong") {
-        createButton("1", "blue", 1*Qscore);
-        createButton("10", "blue", 10*Qscore);
-        createButton("50", "blue", 50*Qscore);
-        createButton("100", "blue", 100*Qscore);
-        createButton("500", "blue", 500*Qscore);
-        createButton("+500", "blue", 0.3);
+        createButton("1", "rgb(78,170,247)", "rgb(37, 150, 190)", 1*Qscore);
+        createButton("10", "rgb(78,170,247)", "rgb(37, 150, 190)", 10*Qscore);
+        createButton("50", "rgb(78,170,247)", "rgb(37, 150, 190)", 50*Qscore);
+        createButton("100", "rgb(78,170,247)", "rgb(37, 150, 190)", 100*Qscore);
+        createButton("500", "rgb(78,170,247)", "rgb(37, 150, 190)", 500*Qscore);
+        createButton("+500", "rgb(78,170,247)", "rgb(37, 150, 190)", 0.3);
     }
 
     if (type === "mulMaths") {
-        createButton("1", "blue", 1*Qscore);
-        createButton("10", "blue", 10*Qscore);
-        createButton("50", "blue", 50*Qscore);
-        createButton("100", "blue", 100*Qscore);
-        createButton("500", "blue", 500*Qscore);
-        createButton("+500", "blue", 1.5);
+        createButton("1", "rgb(78,170,247)", "rgb(37, 150, 190)", 1*Qscore);
+        createButton("10", "rgb(78,170,247)", "rgb(37, 150, 190)", 10*Qscore);
+        createButton("50", "rgb(78,170,247)", "rgb(37, 150, 190)", 50*Qscore);
+        createButton("100", "rgb(78,170,247)", "rgb(37, 150, 190)", 100*Qscore);
+        createButton("500", "rgb(78,170,247)", "rgb(37, 150, 190)", 500*Qscore);
+        createButton("+500", "rgb(78,170,247)", "rgb(37, 150, 190)", 1.5);
     }
 
     if (type === "mulPousse") {
-        createButton("1", "blue", 1*Qscore);
-        createButton("10", "blue", 10*Qscore);
-        createButton("50", "blue", 50*Qscore);
-        createButton("100", "blue", 100*Qscore);
-        createButton("500", "blue", 500*Qscore);
-        createButton("+500", "blue", 5.8);
+        createButton("1", "rgb(78,170,247)", "rgb(37, 150, 190)", 1*Qscore);
+        createButton("10", "rgb(78,170,247)", "rgb(37, 150, 190)", 10*Qscore);
+        createButton("50", "rgb(78,170,247)", "rgb(37, 150, 190)", 50*Qscore);
+        createButton("100", "rgb(78,170,247)", "rgb(37, 150, 190)", 100*Qscore);
+        createButton("500", "rgb(78,170,247)", "rgb(37, 150, 190)", 500*Qscore);
+        createButton("+500", "rgb(78,170,247)", "rgb(37, 150, 190)", 5.8);
     }
 
     if (type === "mul10") {
-        createButton("1", "blue", 1*Qscore);
-        createButton("2", "blue", 2*Qscore);
-        createButton("5", "blue", 5*Qscore);
-        createButton("10", "blue", 10*Qscore);
-        createButton("+10", "blue", 1.5);
+        createButton("1", "rgb(78,170,247)", "rgb(37, 150, 190)", 1*Qscore);
+        createButton("2", "rgb(78,170,247)", "rgb(37, 150, 190)", 2*Qscore);
+        createButton("5", "rgb(78,170,247)", "rgb(37, 150, 190)", 5*Qscore);
+        createButton("10", "rgb(78,170,247)", "rgb(37, 150, 190)", 10*Qscore);
+        createButton("+10", "rgb(78,170,247)", "rgb(37, 150, 190)", 1.5);
     }
 
     if (type === "mulTriche") {
-        createButton("1", "blue", 1*Qscore);
-        createButton("2", "blue", 2*Qscore);
-        createButton("5", "blue", 5*Qscore);
-        createButton("10", "blue", 10*Qscore);
-        createButton("+10", "blue", 40);
+        createButton("1", "rgb(78,170,247)", "rgb(37, 150, 190)", 1*Qscore);
+        createButton("2", "rgb(78,170,247)", "rgb(37, 150, 190)", 2*Qscore);
+        createButton("5", "rgb(78,170,247)", "rgb(37, 150, 190)", 5*Qscore);
+        createButton("10", "rgb(78,170,247)", "rgb(37, 150, 190)", 10*Qscore);
+        createButton("+10", "rgb(78,170,247)", "rgb(37, 150, 190)", 40);
     }
 
     if (type === "napoleon") {
@@ -163,7 +164,7 @@ function updateButtons(type,Qscore) {
 }
 
 // Création des boutons avec style
-function createButton(text, color, value) {
+function createButton(text, color, modified_color, value) {
     let button = document.createElement("button");
     button.textContent = text;
     button.style.backgroundColor = color;
@@ -174,7 +175,16 @@ function createButton(text, color, value) {
     button.style.borderRadius = "5px";
     button.style.cursor = "pointer";
     button.style.display = "block"; // Empiler verticalement
+    button.style.fontFamily = "'Comic Sans MS', cursive, sans-serif"; // Choix de la police
+    button.style.fontWeight = "bold"; // Mettre en gras
 
+    // Modification de la couleur des boutons avec passage de souris
+    button.addEventListener("mouseover", () => {
+        button.style.backgroundColor = modified_color;
+    });
+    button.addEventListener("mouseout", () => {
+        button.style.backgroundColor = color;
+    });
     button.addEventListener("click", () => handleAnswer(value));
     divButtons.appendChild(button);
 }
