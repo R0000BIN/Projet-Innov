@@ -72,7 +72,7 @@ const categories = [
 
 
 // Variables
-var compteur=1;
+var compteur=0;
 let score=[0.0,0.0,0.0,0.0];
 let currentCategoryIndex = 0;
 
@@ -199,16 +199,16 @@ function handleAnswer(value) {
     const currentCategory = categories[currentCategoryIndex];
     score[currentCategoryIndex] += value;
 
+    compteur++;
+
     // Vérifier si on doit sauter la prochaine question
-    if (value === 0 && currentCategory.questions[compteur]?.type.startsWith("mul")) {
+    if (value === 0 && currentCategory.questions[compteur].type.startsWith("mul")) {
         compteur++;
     }
-    
-    compteur++;
 
     if (compteur < currentCategory.questions.length) {
         question.textContent = currentCategory.questions[compteur].name;
-        theme.textContent = currentCategory.name;
+        theme.textContent = currentCategory.name+" "+compteur;
         updateButtons(currentCategory.questions[compteur].type,currentCategory.questions[compteur].score);
     } else {
         currentCategoryIndex++;
@@ -217,7 +217,7 @@ function handleAnswer(value) {
         if (currentCategoryIndex < categories.length) {
             const nextCategory = categories[currentCategoryIndex];
             question.textContent = nextCategory.questions[compteur].name;
-            theme.textContent = nextCategory.name;
+            theme.textContent = nextCategory.name+" "+compteur;
             updateButtons(nextCategory.questions[compteur].type,nextCategory.questions[compteur].score);
         } else {
             scoreFinal(score);
