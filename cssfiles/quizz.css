@@ -3,17 +3,27 @@
 }
 
 .greenbutton {
-    background-color: green;
+    background-color: rgb(93, 193, 93);
+}
+
+.greenbutton:hover {
+    background-color: rgb(75, 156, 75);
 }
 
 .redbutton {
-    background-color: red;
+    background-color: rgb(217, 83, 79);
+}
+
+.redbutton:hover {
+    background-color: rgb(176, 68, 64);
 }
 
 .redbutton, .greenbutton {
-    padding: 15px;
+    padding: 25px;
     border-radius: 15px;
     text-decoration: none;
+    font-size: 24px;
+    transition: background-color 0.1s;
 }
 
 section {
@@ -31,6 +41,20 @@ main {
     justify-content: space-between;
 }
 
+.navigation2 {
+    text-decoration: none;
+    background-color: rgb(45, 45, 45);
+    color: white;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 14px;
+    transition: background-color 0.1s
+}
+
+.navigation2:hover {
+    background-color: rgb(55, 55, 55);
+}
+
 .pub {
-    background-color: blue;
+    background-color: rgb(155, 155, 252);
 }
