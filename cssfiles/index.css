@@ -1,24 +1,45 @@
+
 /*
     Main content --> specific to the home page
 */
-* {
-    color: white;
-}
+
 main {
     display: flex;
-    text-align: center;
     flex-direction: column; /* Disposition en colonne */
     justify-content: center; /* Centre les éléments horizontalement */
     align-items: center; /* Centre les éléments verticalement */
     height: 100vh; /* Prend toute la hauteur de la fenêtre */
-    
+    gap: 60px; /* Ajoute un espace entre les éléments */
+}
+
+.pub img {
+    width: 500px; /* Définissez la largeur souhaitée */
+    height: 240px; /* Définissez la hauteur souhaitée */
+    border-radius: 10px;
+    object-fit: cover; /* Assure que l'image couvre l'espace sans déformation */
 }
 
 .nav {
     text-align: center;
 }
 
-.navigation2 {
+.navigation1 {
+    text-decoration: none;
+    background-color: rgb(236, 168, 73);
+    color: white;
+    border-radius: 15px;
+    padding: 10px 25px;
+    font-size: 22px;
+    font-weight: bold;
+    transition: background-color 0.1s, color 0.1s;
+}
+
+.navigation1:hover {
+    background-color: rgb(229, 145, 35);
+    color: white;
+}
+
+.navigation_link {
     text-decoration: none;
     background-color: rgb(45, 45, 45);
     color: white;
@@ -28,7 +49,7 @@ main {
     transition: background-color 0.1s
 }
 
-.navigation2:hover {
+.navigation_link:hover {
     background-color: rgb(55, 55, 55);
 }
 
@@ -37,3 +58,5 @@ footer p {
     font-size: 14px;
     text-align: center;
 }
+
+

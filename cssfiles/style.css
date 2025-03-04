@@ -1,3 +1,6 @@
+/*
+    Body --> shared CSS between the three pages
+*/
 html, body {
     height: 100%;
     margin: 0;
@@ -13,51 +16,24 @@ body {
     box-sizing: border-box;
 }
 
-header, footer {
+/*
+    Header --> shared between the three pages
+*/
+header {
     text-align: center;
-    padding: 20px;
-    background-color: rgb(34, 34, 34);
-    border-radius: 10px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 36px;
-}
-
-header p {
-    margin: 10px 0 0;
-    font-size: 18px;
-}
-
-main {
-    flex: 1 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;   /* Utilisez space-around pour un espacement plus centré */
     align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%; /* Limitez la largeur pour centrer davantage */
+    margin: 0 auto; /* Centrez le header */
 }
-
-.nav {
-    text-align: center;
-}
-
-.navigation1 {
-    text-decoration: none;
-    background-color: rgb(236, 168, 73);
+.brand-name {
     color: white;
-    border-radius: 15px;
-    padding: 10px 25px;
-    font-size: 22px;
+    font-size: 64px;
     font-weight: bold;
-    transition: background-color 0.1s, color 0.1s;
 }
-
-.navigation1:hover {
-    background-color: rgb(229, 145, 35);
-    color: white;
-}
-
-footer p {
-    margin: 0;
-    font-size: 14px;
+.brand-slogan {
+    font-size: 16px;
 }

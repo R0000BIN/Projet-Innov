@@ -157,9 +157,9 @@ function updateButtons(type,Qscore) {
     }
 
     if (type === "napoleon") {
-        createButton("1789", "blue", 0);
-        createButton("1779", "blue", 0);
-        createButton("1769", "blue", Qscore);
+        createButton("1789", "rgb(78,170,247)", "rgb(37, 150, 190)", 0);
+        createButton("1779", "rgb(78,170,247)", "rgb(37, 150, 190)", 0);
+        createButton("1769", "rgb(78,170,247)", "rgb(37, 150, 190)", Qscore);
     }
 }
 
@@ -189,6 +189,35 @@ function createButton(text, color, modified_color, value) {
     divButtons.appendChild(button);
 }
 
+// Création du bouton pour rediriger vers la page result.html
+function createRedirectButton() {
+    let redirectButton = document.createElement("button");
+    redirectButton.textContent = "Voir les résultats";
+    redirectButton.style.backgroundColor = "rgb(78,170,247)";
+    redirectButton.style.color = "white";
+    redirectButton.style.padding = "15px";
+    redirectButton.style.margin = "20px 0";
+    redirectButton.style.border = "none";
+    redirectButton.style.borderRadius = "5px";
+    redirectButton.style.cursor = "pointer";
+    redirectButton.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
+    redirectButton.style.fontWeight = "bold";
+
+    // Modification de la couleur des boutons avec passage de souris
+    redirectButton.addEventListener("mouseover", () => {
+        redirectButton.style.backgroundColor = "rgb(37, 150, 190)";
+    });
+    redirectButton.addEventListener("mouseout", () => {
+        redirectButton.style.backgroundColor = color;
+    });
+
+    // Redirection vers la page result.html
+    redirectButton.addEventListener("click", () => {
+        window.location.href = "result.html";
+    });
+    buttons.appendChild(redirectButton);
+}
+
 
 function scoreFinal(score) {
     question.textContent = "Vous êtes arrivés à la fin des questions";
@@ -201,8 +230,11 @@ function scoreFinal(score) {
 
     buttons.appendChild(final);
 
-}
+    divButtons.innerHTML = ""; // Supprimer les boutons à la fin
 
+    createRedirectButton();   // Appel de la fonction pour créer le bouton de redirection à la fin du test
+
+}
 
 // Gestion des réponses
 function handleAnswer(value) {
@@ -231,7 +263,8 @@ function handleAnswer(value) {
             updateButtons(nextCategory.questions[compteur].type,nextCategory.questions[compteur].score);
         } else {
             scoreFinal(score);
-            divButtons.innerHTML = ""; // Supprimer les boutons à la fin
+            
+            
         }
     }
 }
@@ -240,7 +273,3 @@ function handleAnswer(value) {
 question.textContent = categories[0].questions[0].name;
 theme.textContent = categories[0].name;
 updateButtons(categories[0].questions[0].type,categories[0].questions[0].score);
-
-
-
-

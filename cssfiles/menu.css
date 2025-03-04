@@ -1,9 +1,0 @@
-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.pub {
-    background-color: rgb(109, 109, 246);
-}

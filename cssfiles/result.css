@@ -1,24 +1,20 @@
 /*
     Main content --> specific to the home page
 */
-* {
-    color: white;
-}
 main {
     display: flex;
-    text-align: center;
     flex-direction: column; /* Disposition en colonne */
     justify-content: center; /* Centre les éléments horizontalement */
     align-items: center; /* Centre les éléments verticalement */
     height: 100vh; /* Prend toute la hauteur de la fenêtre */
-    
 }
+
 
 .nav {
     text-align: center;
 }
 
-.navigation2 {
+.navigation_link {
     text-decoration: none;
     background-color: rgb(45, 45, 45);
     color: white;
@@ -28,7 +24,7 @@ main {
     transition: background-color 0.1s
 }
 
-.navigation2:hover {
+.navigation_link:hover {
     background-color: rgb(55, 55, 55);
 }
 
@@ -37,3 +33,5 @@ footer p {
     font-size: 14px;
     text-align: center;
 }
+
+
