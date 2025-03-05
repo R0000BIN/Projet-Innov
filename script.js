@@ -220,9 +220,9 @@ function createRedirectButton() {
 
 
 function scoreFinal(score) {
+    localStorage.setItem("scores", JSON.stringify(score)); // Sauvegarde score dans localStorage
     question.textContent = "Vous êtes arrivés à la fin des questions";
     theme.textContent = "Score Final : ";
-
     let final = document.createElement("p");
     for (let i = 0; i < categories.length; i++) {
         final.textContent += ""+categories[i].name+" : "+score[i]+" | ";
@@ -263,7 +263,6 @@ function handleAnswer(value) {
             updateButtons(nextCategory.questions[compteur].type,nextCategory.questions[compteur].score);
         } else {
             scoreFinal(score);
-            
             
         }
     }
