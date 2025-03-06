@@ -68,7 +68,7 @@ const categories = [
     { name: "Thème : Consommation Energétique", questions: conso_energetique },
     { name: "Thème : Dépendance à l'IA", questions: dependance_ia },
     { name: "Thème : Éthique et conséquences", questions: ethique_consequences },
-    { name: "Thème :Pertinence", questions: pertinence }
+    { name: "Thème : Pertinence", questions: pertinence }
 ];
 
 
