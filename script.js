@@ -244,8 +244,10 @@ function handleAnswer(value) {
     compteur++;
 
     // Vérifier si on doit sauter la prochaine question
-    if (value === 0 && currentCategory.questions[compteur].type.startsWith("mul")) {
-        compteur++;
+    if (value === 0 && compteur < currentCategory.questions.length) {
+        if (currentCategory.questions[compteur].type.startsWith("mul")) {
+            compteur++;
+        }
     }
 
     if (compteur < currentCategory.questions.length) {
