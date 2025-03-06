@@ -65,10 +65,10 @@ const pertinence = [
 
 // Tableau contenant toutes les catégories de questions
 const categories = [
-    { name: "Consommation Energétique", questions: conso_energetique },
-    { name: "Dépendance à l'IA", questions: dependance_ia },
-    { name: "Éthique et conséquences", questions: ethique_consequences },
-    { name: "Pertinence", questions: pertinence }
+    { name: "Thème : Consommation Energétique", questions: conso_energetique },
+    { name: "Thème : Dépendance à l'IA", questions: dependance_ia },
+    { name: "Thème : Éthique et conséquences", questions: ethique_consequences },
+    { name: "Thème :Pertinence", questions: pertinence }
 ];
 
 
@@ -224,9 +224,8 @@ function scoreFinal(score) {
     question.textContent = "Vous êtes arrivés à la fin des questions";
     theme.textContent = "Score Final : ";
     let final = document.createElement("p");
-    for (let i = 0; i < categories.length; i++) {
-        final.textContent += ""+categories[i].name+" : "+score[i]+" | ";
-    }
+    
+    theme.remove();
 
     buttons.appendChild(final);
 
