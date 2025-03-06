@@ -175,7 +175,7 @@ function createButton(text, color, modified_color, value) {
     button.style.borderRadius = "5px";
     button.style.cursor = "pointer";
     button.style.display = "block"; // Empiler verticalement
-    button.style.fontFamily = "'Comic Sans MS', cursive, sans-serif"; // Choix de la police
+    button.style.fontFamily = "'Arial', sans-serif"; // Choix de la police
     button.style.fontWeight = "bold"; // Mettre en gras
 
     // Modification de la couleur des boutons avec passage de souris
@@ -200,7 +200,7 @@ function createRedirectButton() {
     redirectButton.style.border = "none";
     redirectButton.style.borderRadius = "5px";
     redirectButton.style.cursor = "pointer";
-    redirectButton.style.fontFamily = "'Comic Sans MS', cursive, sans-serif";
+    redirectButton.style.fontFamily = "'Arial', sans-serif";
     redirectButton.style.fontWeight = "bold";
 
     // Modification de la couleur des boutons avec passage de souris
