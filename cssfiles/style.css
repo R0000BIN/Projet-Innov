@@ -37,3 +37,13 @@ header {
 .brand-slogan {
     font-size: 18px;
 }
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+    .brand-name {
+        font-size: 32px; /* Smaller font size for mobile */
+    }
+    .brand-slogan {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
+}
