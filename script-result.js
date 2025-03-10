@@ -143,6 +143,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // Appelle la fonction pour mettre à jour les valeurs lorsque le document est chargé
     window.onload = updateValues(selectedValue);
 
-    
-
 });
