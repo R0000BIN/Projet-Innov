@@ -10,10 +10,14 @@ main {
     align-items: center; /* Centre les éléments verticalement */
     height: 100vh; /* Prend toute la hauteur de la fenêtre */
     gap: 60px; /* Ajoute un espace entre les éléments */
+    position: relative; /* Position relative pour le positionnement des pubs */
+    padding-top: 60px; /* Add padding to avoid overlapping with header */
+    padding-bottom: 60px; /* Add padding to avoid overlapping with footer */
 }
 
 .pub {
     position: absolute;
+    margin: 1%;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -27,14 +31,15 @@ main {
 }
 
 .pub img {
-    width: 200px; /* Définissez la largeur souhaitée pour les pubs verticales */
-    height: auto; /* Hauteur automatique pour maintenir le ratio */
+    width: 10vh; /* Définissez la largeur souhaitée pour les pubs verticales */
+    height: 80vh; /* Hauteur automatique pour maintenir le ratio */
     border-radius: 10px;
     object-fit: cover; /* Assure que l'image couvre l'espace sans déformation */
 }
 
 .nav {
     text-align: center;
+    width: 70%;
 }
 
 .navigation1 {
@@ -72,5 +77,6 @@ footer p {
     font-size: 14px;
     text-align: center;
 }
+
 
 
