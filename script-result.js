@@ -32,6 +32,48 @@ document.addEventListener("DOMContentLoaded", function () {
         return 10;
     }
 
+    // Fonction génération d'un graphe en radar
+    function createRadarChart(scores) {
+        const ctx = document.getElementById('radarChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ["Consommation Energétique", "Dépendance", "Morale", "Pertinence de l'utilisation"],
+                datasets: [{
+                    label: 'Scores',
+                    data: scores,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgb(214, 218, 220)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: 'rgba(54, 162, 235, 0.5)' // Couleur des lignes du diagramme
+                        },
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.5)' // Couleur des lignes de la grille
+                        },
+                        pointLabels: {
+                            color: 'rgba(54, 162, 235, 1)' // Couleur des labels des points
+                        },
+                        ticks: {
+                            display: true,
+                            stepSize: 25, // Affiche seulement 25, 50, 75 et 100
+                            color: 'rgba(54, 162, 235, 1)',
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                },
+                responsive: true,
+                maintainAspectRatio: false // Permet d'augmenter la taille du graphe
+            }
+        });
+    }
+
     // Affichage de la phrase de description
     const descriptElement = document.getElementById("descript");
     let phraseIndex;
@@ -87,4 +129,8 @@ document.addEventListener("DOMContentLoaded", function () {
         box.innerText = `${categories[index]} : ${score.toFixed(0)}%`;
         boxesContainer.appendChild(box);
     });
+
+    // Création du graphe radar
+    createRadarChart(X);
+    
 });
