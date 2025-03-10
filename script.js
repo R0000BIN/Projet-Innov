@@ -17,11 +17,11 @@ const conso_energetique = [
     {name : "Combien de requêtes faites-vous par semaine (en moyenne) ?", type: "mulSemaine", score: 0.01},
     {name : "Avez-vous déjà généré des textes longs (lettre de motivation, mémoire…) ?", type: "yn", score: 0.0001},
     {name : "Combien de fois ?", type: "mulLong", score: 0.0004},
-    {name : "Avez-vous déjà généré des images/vidéos ?", type: "yn", score: 0.0001},
+    {name : "Avez-vous déjà généré des vidéos ?", type: "yn", score: 0.0001},
     {name : "Combien de fois ?", type: "mulImage", score: 0.02},
     {name : "Avez-vous déjà demandé d’effectuer des calculs mathématiques (résoudre des équations, des intégrales ou des problèmes de logique) ?", type: "yn", score: 0.0001},
     {name : "Combien de fois ?", type: "mulMaths", score: 0.002},
-    {name : "Avez-vous déjà utilisé la version performante de Chat GPT (raisonnement poussé avec l'abonnement payant) ?", type: "yn", score: 0.0001},
+    {name : "Avez-vous déjà utilisé la version performante de Chat GPT (version Premium) ET/OU généré des images ?", type: "yn", score: 0.0001},
     {name : "Combien de fois ?", type: "mulPousse", score: 0.008},
     {name : "Combien d’IA différentes utilisez-vous ?", type: "mul10", score: 0.01},
     {name : "Combien de lignes font vos prompts (en moyenne) ?", type:"mul10", score: 0.01}
