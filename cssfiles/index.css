@@ -12,9 +12,23 @@ main {
     gap: 60px; /* Ajoute un espace entre les éléments */
 }
 
+.pub {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.pub-left {
+    left: 0;
+}
+
+.pub-right {
+    right: 0;
+}
+
 .pub img {
-    width: 500px; /* Définissez la largeur souhaitée */
-    height: 240px; /* Définissez la hauteur souhaitée */
+    width: 200px; /* Définissez la largeur souhaitée pour les pubs verticales */
+    height: auto; /* Hauteur automatique pour maintenir le ratio */
     border-radius: 10px;
     object-fit: cover; /* Assure que l'image couvre l'espace sans déformation */
 }
