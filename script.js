@@ -96,47 +96,42 @@ function updateButtons(type,Qscore) {
     }
 
     if (type === "mulSemaine") {
-        createButton("1", "rgb(78,170,247)", "rgb(37, 150, 190)", 1*Qscore);
-        createButton("5", "rgb(78,170,247)", "rgb(37, 150, 190)", 5*Qscore);
-        createButton("10", "rgb(78,170,247)", "rgb(37, 150, 190)", 10*Qscore);
-        createButton("50", "rgb(78,170,247)", "rgb(37, 150, 190)", 50*Qscore);
-        createButton("100", "rgb(78,170,247)", "rgb(37, 150, 190)", 100*Qscore);
+        createButton("1 à 5", "rgb(78,170,247)", "rgb(37, 150, 190)", 2.5*Qscore);
+        createButton("5 à 10", "rgb(78,170,247)", "rgb(37, 150, 190)", 7.5*Qscore);
+        createButton("10 à 50", "rgb(78,170,247)", "rgb(37, 150, 190)", 25*Qscore);
+        createButton("50 à 100", "rgb(78,170,247)", "rgb(37, 150, 190)", 75*Qscore);
         createButton("+100", "rgb(78,170,247)", "rgb(37, 150, 190)", 1.5);
     }
 
     if (type === "mulImage") {
-        createButton("1", "rgb(78,170,247)", "rgb(37, 150, 190)", 1*Qscore);
-        createButton("10", "rgb(78,170,247)", "rgb(37, 150, 190)", 10*Qscore);
-        createButton("50", "rgb(78,170,247)", "rgb(37, 150, 190)", 50*Qscore);
-        createButton("100", "rgb(78,170,247)", "rgb(37, 150, 190)", 100*Qscore);
-        createButton("500", "rgb(78,170,247)", "rgb(37, 150, 190)", 500*Qscore);
+        createButton("1 à 10", "rgb(78,170,247)", "rgb(37, 150, 190)", 5*Qscore);
+        createButton("10 à 50", "rgb(78,170,247)", "rgb(37, 150, 190)", 25*Qscore);
+        createButton("50 à 100", "rgb(78,170,247)", "rgb(37, 150, 190)", 75*Qscore);
+        createButton("100 à 500", "rgb(78,170,247)", "rgb(37, 150, 190)", 250*Qscore);
         createButton("+500", "rgb(78,170,247)", "rgb(37, 150, 190)", 15);
     }
 
     if (type === "mulLong") {
-        createButton("1", "rgb(78,170,247)", "rgb(37, 150, 190)", 1*Qscore);
-        createButton("10", "rgb(78,170,247)", "rgb(37, 150, 190)", 10*Qscore);
-        createButton("50", "rgb(78,170,247)", "rgb(37, 150, 190)", 50*Qscore);
-        createButton("100", "rgb(78,170,247)", "rgb(37, 150, 190)", 100*Qscore);
-        createButton("500", "rgb(78,170,247)", "rgb(37, 150, 190)", 500*Qscore);
+        createButton("1 à 10", "rgb(78,170,247)", "rgb(37, 150, 190)", 5*Qscore);
+        createButton("10 à 50", "rgb(78,170,247)", "rgb(37, 150, 190)", 25*Qscore);
+        createButton("50 à 100", "rgb(78,170,247)", "rgb(37, 150, 190)", 75*Qscore);
+        createButton("100 à 500", "rgb(78,170,247)", "rgb(37, 150, 190)", 250*Qscore);
         createButton("+500", "rgb(78,170,247)", "rgb(37, 150, 190)", 0.3);
     }
 
     if (type === "mulMaths") {
-        createButton("1", "rgb(78,170,247)", "rgb(37, 150, 190)", 1*Qscore);
-        createButton("10", "rgb(78,170,247)", "rgb(37, 150, 190)", 10*Qscore);
-        createButton("50", "rgb(78,170,247)", "rgb(37, 150, 190)", 50*Qscore);
-        createButton("100", "rgb(78,170,247)", "rgb(37, 150, 190)", 100*Qscore);
-        createButton("500", "rgb(78,170,247)", "rgb(37, 150, 190)", 500*Qscore);
+        createButton("1 à 10", "rgb(78,170,247)", "rgb(37, 150, 190)", 5*Qscore);
+        createButton("10 à 50", "rgb(78,170,247)", "rgb(37, 150, 190)", 25*Qscore);
+        createButton("50 à 100", "rgb(78,170,247)", "rgb(37, 150, 190)", 75*Qscore);
+        createButton("100 à 500", "rgb(78,170,247)", "rgb(37, 150, 190)", 250*Qscore);
         createButton("+500", "rgb(78,170,247)", "rgb(37, 150, 190)", 1.5);
     }
 
     if (type === "mulPousse") {
-        createButton("1", "rgb(78,170,247)", "rgb(37, 150, 190)", 1*Qscore);
-        createButton("10", "rgb(78,170,247)", "rgb(37, 150, 190)", 10*Qscore);
-        createButton("50", "rgb(78,170,247)", "rgb(37, 150, 190)", 50*Qscore);
-        createButton("100", "rgb(78,170,247)", "rgb(37, 150, 190)", 100*Qscore);
-        createButton("500", "rgb(78,170,247)", "rgb(37, 150, 190)", 500*Qscore);
+        createButton("1 à 10", "rgb(78,170,247)", "rgb(37, 150, 190)", 5*Qscore);
+        createButton("10 à 50", "rgb(78,170,247)", "rgb(37, 150, 190)", 25*Qscore);
+        createButton("50 à 100", "rgb(78,170,247)", "rgb(37, 150, 190)", 75*Qscore);
+        createButton("100 à 500", "rgb(78,170,247)", "rgb(37, 150, 190)", 250*Qscore);
         createButton("+500", "rgb(78,170,247)", "rgb(37, 150, 190)", 5.8);
     }
 
