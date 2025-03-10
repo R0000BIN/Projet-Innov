@@ -12,11 +12,10 @@ let theme = document.getElementById('theme');
 
 // Thème : Empreinte Carbone
 const conso_energetique = [
-    {name : "Avez-vous déjà utilisé Chat GPT ?", type: "yn", score: 0.0001},
     {name : "Utilisez-vous une IA générative : au moins une fois par mois ?", type: "yn", score: 0.0001},
     {name : "Utilisez-vous une IA générative : au moins une fois par semaine ?", type: "yn", score: 0.0001},
     {name : "Combien de requêtes faites-vous par semaine (en moyenne) ?", type: "mulSemaine", score: 0.01},
-    {name : "Avez-vous déjà généré des textes longs (lettre de motivation, mémoire…) ?", type: "yn", score: 1},
+    {name : "Avez-vous déjà généré des textes longs (lettre de motivation, mémoire…) ?", type: "yn", score: 0.0001},
     {name : "Combien de fois ?", type: "mulLong", score: 0.0004},
     {name : "Avez-vous déjà généré des images/vidéos ?", type: "yn", score: 0.0001},
     {name : "Combien de fois ?", type: "mulImage", score: 0.02},
@@ -30,34 +29,36 @@ const conso_energetique = [
 
 // Thème : Dépendance à l’IA
 const dependance_ia = [
+    {name : "Avez-vous déjà utilisé Chat GPT ?", type: "yn", score: 0},
     { name: "Avez-vous déjà utilisé Chat GPT pour faire une tâche que vous pouvez faire sans IA ?", type: "yn", score: 4},
     { name: "Utilisez-vous Chat GPT pour écrire vos mails à votre place ?", type: "yn", score: 8},
     { name: "Chat GPT a-t-il déjà fait votre liste de courses ?", type: "yn", score: 4},
-    { name: "Avez-vous déjà flirté avec une IA ?", type: "yn", score: 16},
-    { name: "Avez-vous déjà ressenti des sentiments vis-à-vis de Chat GPT ?", type: "yn", score: 20},
-    { name: "Aujourd’hui, avez-vous plus parlé à une IA qu’à un humain ?", type: "yn", score: 16},
     { name: "Avez-vous déjà abandonné un projet parce que l’IA ne vous donnait pas les réponses parfaites ?", type: "yn", score: 12},
-    { name: "Avez-vous déjà rêvé que l’IA puisse gérer votre vie ?", type: "yn", score: 20}
+    { name: "Avez-vous déjà rêvé que l’IA puisse gérer votre vie ?", type: "yn", score: 14},
+    { name: "Avez-vous entendu parlé des IA dites sociales (IA snapchat, CrushOn AI…)?", type: "yn", score: 12},
+    { name: "Aujourd’hui, avez-vous plus parlé à une IA qu’à un humain ?", type: "yn", score: 12},
+    { name: "Avez-vous déjà flirté avec une IA ?", type: "yn", score: 12},
+    { name: "Avez-vous déjà utilisé une IA pour draguer quelqu’un en lui faisant croire que c'était vous qui écriviez ?", type: "yn", score: 8},
+    { name: "Avez-vous déjà ressenti des sentiments vis-à-vis de Chat GPT ?", type: "yn", score: 14}
 ];
 
 // Thème : Éthique et conséquences
 const ethique_consequences = [
-    { name: "Connaissez-vous l’impact environnemental de l’utilisation de Chat GPT ?", type: "ny", score: 4},
-    { name: "Avez-vous diminué votre utilisation à cause de ça ?", type: "ny", score: 8},
-    { name: "Avez-vous déjà utilisé une IA pour draguer quelqu’un en lui faisant croire que c'était vous qui écriviez ?", type: "yn", score: 8},
-    { name: "Avez-vous déjà demandé à une IA de générer du contenu illégal (recette pour faire des space cookies, images pornographiques) ?", type: "yn", score: 20},
-    { name: "Avez-vous déjà utilisé une IA pour tricher à un examen ou un test ?", type: "yn", score: 16},
-    {name : "Combien de fois ?", type: "mulTriche", score: 2},
-    { name: "Avez-vous déjà utilisé l'IA pour générer des commentaires positifs sur vos propres posts ?", type: "yn", score: 4}
+    { name: "Connaissez-vous l’impact environnemental de l’utilisation de Chat GPT ?", type: "ny", score: 6},
+    { name: "Avez-vous diminué votre utilisation à cause de ça ?", type: "ny", score: 2},
+    { name: "Avez-vous déjà utilisé l'IA pour générer des commentaires positifs sur vos propres posts ?", type: "yn", score: 6},
+    { name: "Avez-vous déjà utilisé une IA pour tricher à un examen ou un test ?", type: "yn", score: 18},
+    { name : "Combien de fois ?", type: "mulTriche", score: 2},
+    { name: "Avez-vous déjà demandé à une IA de générer du contenu illégal (recette pour faire des space cookies, images pornographiques) ?", type: "yn", score: 20}
 ];
 
 // Thème : Pertinence
 const pertinence = [
     {name : "Avez-vous déjà payé pour un abonnement à une IA ?", type: "yn", score: 4}, 
     { name: "Avez-vous déjà demandé à une IA de faire vos devoirs à votre place ?", type: "yn", score: 12},
+    { name: "Avez-vous déjà utilisé une IA générative juste pour prouver qu’elle était nulle ?", type: "yn", score: 8},
     { name: "Avez-vous déjà posé des questions 'borderline' à Chat GPT ?", type: "yn", score: 16},
     { name: "Avez-vous déjà généré une image avec une IA juste pour voir des boobs ?", type: "yn", score: 20},
-    { name: "Avez-vous déjà utilisé une IA générative juste pour prouver qu’elle était nulle ?", type: "yn", score: 8},
     { name: "Quelle est la date de naissance de Napoléon Bonaparte ?", type: "napoleon", score: 4},
     { name: "Avez-vous utilisé l’IA pour répondre à cette question ?", type: "yn", score: 20},
     { name: "Avez-vous effectué un des actes de ce test exprès pour améliorer votre score ?", type: "yn", score: 16}
@@ -65,8 +66,8 @@ const pertinence = [
 
 // Tableau contenant toutes les catégories de questions
 const categories = [
-    { name: "Thème : Consommation Energétique", questions: conso_energetique },
     { name: "Thème : Dépendance à l'IA", questions: dependance_ia },
+    { name: "Thème : Consommation Energétique", questions: conso_energetique },
     { name: "Thème : Éthique et conséquences", questions: ethique_consequences },
     { name: "Thème : Pertinence", questions: pertinence }
 ];
@@ -240,6 +241,12 @@ function handleAnswer(value) {
     // Vérifier si on doit sauter la prochaine question
     if (value === 0 && compteur < currentCategory.questions.length) {
         if (currentCategory.questions[compteur].type.startsWith("mul")) {
+            compteur++;
+        }
+    }
+
+    if (value>0 && compteur < currentCategory.questions.length) {
+        if (currentCategory.questions[compteur].name==="Avez-vous diminué votre utilisation à cause de ça ?") {
             compteur++;
         }
     }
