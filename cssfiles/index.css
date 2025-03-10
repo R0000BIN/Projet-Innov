@@ -31,15 +31,20 @@ main {
 }
 
 .pub img {
-    width: 10vh; /* Définissez la largeur souhaitée pour les pubs verticales */
+    width: 20vh; /* Définissez la largeur souhaitée pour les pubs verticales */
     height: 80vh; /* Hauteur automatique pour maintenir le ratio */
     border-radius: 10px;
     object-fit: cover; /* Assure que l'image couvre l'espace sans déformation */
 }
 
 .nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
     text-align: center;
     width: 70%;
+    margin: auto;
 }
 
 .navigation1 {
@@ -76,6 +81,19 @@ footer p {
     margin: 0;
     font-size: 14px;
     text-align: center;
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 75%; /* Reduce font size to 75% on mobile devices */
+    }
+
+    .pub img {
+        width: 10vh; /* Définissez la largeur souhaitée pour les pubs verticales */
+        height: 80vh; /* Hauteur automatique pour maintenir le ratio */
+        border-radius: 10px;
+        object-fit: cover; /* Assure que l'image couvre l'espace sans déformation */
+    }
 }
 
 
