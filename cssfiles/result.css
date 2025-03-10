@@ -11,10 +11,16 @@ main {
     margin-bottom: 20px; /* Ajoute un espace en bas */
     flex-grow: 1; /* Permet au contenu de grandir si nécessaire */
 }
-.container {
+.containers {
     max-width: 500px;
     margin: 20px auto;
     padding: 20px;
+}
+.container1{
+    background-color: rgb(121, 94, 94);
+}
+.container2{
+    background-color: rgb(94, 114, 121);
 }
 
 /* Score et phrase de description ---------*/

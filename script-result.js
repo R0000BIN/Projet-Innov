@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
     
-    // Récupération des scores et initialisation des catégories et phrases de description
+    // Récupération des scores et initialisation des varaibles, catégories et phrases de description
     const X = JSON.parse(localStorage.getItem("scores"));
+    const ConsoEnergy = X[0];  // copie de X[0] qui ne sera pas modifiée
+    X[0] = 100.3637 * (1 - Math.exp(-0.2 * X[0]));  // transformation de la consommation énergétique en score sur 100
+    const totalScore = X.reduce((a, b) => a + b, 0).toFixed(0); // calcul du score total
+    const facteurs_emission = {"france": 0.055, "europe": 0.250, "monde": 0.522};  // facteur d'émission pour convertir l'énergie en kgCO2
+
     const categories = ["Consommation Energétique", "Dépendance", "Morale", "Pertinence de l'utilisation"];  
     const phrases = [
         "Tu connais l'IA ? (Boomer)",
@@ -11,10 +16,21 @@ document.addEventListener("DOMContentLoaded", function () {
         "Tu ne penses plus par toi-même",
         "Tu es en couple avec chat GPT",
         "Tu es un bandeur d'IA"
-    ] 
-    const ConsoEnergy = X[0];  // copie de X[0] qui ne sera pas modifiée
-    X[0] = 100.3637 * (1 - Math.exp(-0.2 * X[0]));  // transformation de la consommation énergétique en score sur 100
-    const totalScore = X.reduce((a, b) => a + b, 0).toFixed(0); // calcul du score total
+    ]; 
+   
+    // Fonction calcul des Emissions de CO2 et des exemples
+    function energy_to_CO2(energy_semaine, facteurs_emission, place) {  // retourne les émissions en kgCO2 sur 6 mois
+        return energy_semaine * 26 * facteurs_emission[place];
+    }
+    function energy_to_phoneCharge(energy_semaine){
+        return 10;
+    }
+    function CO2_to_kmVoiture(kgCO2){
+        return 10;
+    }
+    function CO2_to_treePlanted(kgCO2){
+        return 10;
+    }
 
     // Affichage de la phrase de description
     const descriptElement = document.getElementById("descript");
