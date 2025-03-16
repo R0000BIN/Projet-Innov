@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "«Tu ne penses plus par toi-même»",
         "«Tu es en couple avec chat GPT»",
         "«Tu es un bandeur d'IA»"
-    ]; 
+    ];
 
     // Fonction calcul des Emissions de CO2 et des exemples
     function energy_to_CO2(energy_semaine) {  // retourne les émissions en kgCO2 sur 1 mois
