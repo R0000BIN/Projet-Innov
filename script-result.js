@@ -12,21 +12,21 @@ document.addEventListener("DOMContentLoaded", function () {
     
     const categories = ["Conso Energétique", "Dépendance", "Immoralité", "Non Pertinence"];  
     const phrases = [
-        "Tu ne connais pas encore l'IA ?",
-        "Tu es fraîchement défloré de l'IA",
-        "Tu trouves l'IA vachement pratique quand même",
-        "T'es un étudiant scientifique lambda",
-        "Tu ne penses plus par toi-même",
-        "Tu es en couple avec chat GPT",
-        "Tu es un bandeur d'IA"
+        "«Tu ne connais pas encore l'IA ?»",
+        "«Tu es fraîchement défloré de l'IA»",
+        "«Tu trouves l'IA vachement pratique quand même»",
+        "«T'es un étudiant scientifique lambda»",
+        "«Tu ne penses plus par toi-même»",
+        "«Tu es en couple avec chat GPT»",
+        "«Tu es un bandeur d'IA»"
     ]; 
 
     // Fonction calcul des Emissions de CO2 et des exemples
     function energy_to_CO2(energy_semaine) {  // retourne les émissions en kgCO2 sur 1 mois
         return energy_semaine * 4 * 0.250;
     }
-    function energy_to_phoneCharge(energy_semaine){
-        return 10;
+    function energy_to_phoneCharge(energy_semaine){  // retourne le nombre de charge de téléphone sur 1 mois
+        return energy_semaine * 4 / 0.015;
     }
     function CO2_to_kmVoiture(kgCO2){  //kgCO2/mois
         return 10;
@@ -176,8 +176,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const kmVoiture = document.getElementById('kmVoiture');
     const nbrArbre = document.getElementById('nbrArbre');
 
-    conso.textContent = ConsoEnergy*4; // consommation énergétique sur 1 mois
-    emissions.textContent = energy_to_CO2(ConsoEnergy);
+    conso.textContent = (ConsoEnergy*4).toFixed(2); // consommation énergétique sur 1 mois
+    emissions.textContent = energy_to_CO2(ConsoEnergy).toFixed(2);
     nbrPhoneCharge.textContent = energy_to_phoneCharge(ConsoEnergy);
     kmVoiture.textContent = CO2_to_kmVoiture(energy_to_CO2(emissions));
     nbrArbre.textContent = CO2_to_treePlanted(energy_to_CO2(emissions));
