@@ -106,9 +106,18 @@ document.addEventListener("DOMContentLoaded", function () {
         new Chart(ctx, {
             type: 'radar',
             data: {
-                labels: ["","Consommation Energétique","", "Dépendance à l'IA","", "Immoralité de l'utilisation","", "Non-Pertinence de l'utilisation"],
+                labels: ["", "Consommation Energétique", "", "Dépendance à l'IA", "", "Immoralité de l'utilisation", "", "Non-Pertinence de l'utilisation"],
                 datasets: [{
-                    data: [(scores[0]+scores[3])/Math.PI, scores[0], (scores[0]+scores[1])/Math.PI, scores[1], (scores[1]+scores[2])/Math.PI, scores[2], (scores[2]+scores[3])/Math.PI, scores[3]],
+                    data: [
+                        intermediateScore(scores[0], scores[3]), 
+                        scores[0], 
+                        intermediateScore(scores[0], scores[1]), 
+                        scores[1], 
+                        intermediateScore(scores[1], scores[2]), 
+                        scores[2], 
+                        intermediateScore(scores[2], scores[3]), 
+                        scores[3]
+                    ],
                     backgroundColor: 'rgba(54, 162, 235, 0.2)',
                     borderColor: 'rgb(214, 218, 220)',
                     borderWidth: 2,
@@ -161,6 +170,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    // Fonction calcul score intermédiaire
+    function intermediateScore(x, y) {
+        return (x * y * Math.sin(135*Math.PI/180 - Math.asin(y/Math.sqrt(x*x + y*y)))) / Math.sqrt(x*x + y*y);
+    }
     // Création du graphe radar
     createRadarChart(X);
 
@@ -178,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     conso.textContent = (ConsoEnergy*4).toFixed(2); // consommation énergétique sur 1 mois
     emissions.textContent = energy_to_CO2(ConsoEnergy).toFixed(2);
-    nbrPhoneCharge.textContent = energy_to_phoneCharge(ConsoEnergy);
-    kmVoiture.textContent = CO2_to_kmVoiture(energy_to_CO2(emissions));
-    nbrArbre.textContent = CO2_to_treePlanted(energy_to_CO2(emissions));
+    nbrPhoneCharge.textContent = energy_to_phoneCharge(ConsoEnergy).toFixed(2);
+    kmVoiture.textContent = CO2_to_kmVoiture(energy_to_CO2(emissions).toFixed(2));
+    nbrArbre.textContent = CO2_to_treePlanted(energy_to_CO2(emissions)).toFixed(0);
 });
