@@ -44,12 +44,13 @@ const dependance_ia = [
 
 // Thème : Éthique et conséquences
 const ethique_consequences = [
-    { name: "Connaissez-vous l’impact environnemental de l’utilisation de Chat GPT ?", type: "ny", score: 6},
-    { name: "Avez-vous diminué votre utilisation à cause de ça ?", type: "ny", score: 2},
-    { name: "Avez-vous déjà utilisé l'IA pour générer des commentaires positifs sur vos propres posts ?", type: "yn", score: 6},
-    { name: "Avez-vous déjà utilisé une IA pour tricher à un examen ou un test ?", type: "yn", score: 18},
+    { name: "Connaissez-vous l’impact environnemental de l’utilisation de Chat GPT ?", type: "ny", score: 4},
+    { name: "Combien pensez-vous qu’une requête standard à ChatGPT émet ?", type: "emission", score: 3},
+    { name: "Avez-vous diminué votre utilisation à cause de ça ?", type: "ny", score: 8},
+    { name: "Avez-vous déjà utilisé une IA pour tricher à un examen ou un test ?", type: "yn", score: 16},
+    { name: "Avez-vous déjà utilisé l'IA pour générer des commentaires positifs sur vos propres posts ?", type: "yn", score: 4},
     { name : "Combien de fois ?", type: "mulTriche", score: 2},
-    { name: "Avez-vous déjà demandé à une IA de générer du contenu illégal (recette pour faire des space cookies, images pornographiques) ?", type: "yn", score: 20}
+    { name: "Avez-vous déjà demandé à une IA de générer du contenu illégal (recette pour faire des space cookies, comment faire une bombe...) ?", type: "yn", score: 20}
 ];
 
 // Thème : Pertinence
@@ -156,6 +157,15 @@ function updateButtons(type,Qscore) {
         createButton("1789", "rgb(78,170,247)", "rgb(37, 150, 190)", 0);
         createButton("1779", "rgb(78,170,247)", "rgb(37, 150, 190)", 0);
         createButton("1769", "rgb(78,170,247)", "rgb(37, 150, 190)", Qscore);
+    }
+
+    if (type === "emission") {
+        createButton("2g (4 emails)", "rgb(78,170,247)", "rgb(37, 150, 190)", 7);
+        createButton("7g (Production d'une fraise sous serre", "rgb(78,170,247)", "rgb(37, 150, 190)", 4);
+        createButton("15g (6km en TGV)", "rgb(78,170,247)", "rgb(37, 150, 190)", 1);
+        createButton("30g (1 épisode de GameOfThrones en streaming)", "rgb(78,170,247)", "rgb(37, 150, 190)", 3);
+        createButton("50g (30 min d'utilisation d'un grille pain)", "rgb(78,170,247)", "rgb(37, 150, 190)", 2);
+
     }
 }
 

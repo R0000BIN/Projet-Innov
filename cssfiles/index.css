@@ -16,23 +16,13 @@ main {
 }
 
 .pub {
-    position: absolute;
-    margin: 1%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.pub-left {
-    left: 0;
-}
-
-.pub-right {
-    right: 0;
-}
+    width: 60vh;
+    height: 100%;
+}   
 
 .pub img {
-    width: 20vh; /* Définissez la largeur souhaitée pour les pubs verticales */
-    height: 80vh; /* Hauteur automatique pour maintenir le ratio */
+    width: 60vh; /* Définissez la largeur souhaitée pour les pubs verticales */
+    height: auto; /* Hauteur automatique pour maintenir le ratio */
     border-radius: 10px;
     object-fit: cover; /* Assure que l'image couvre l'espace sans déformation */
 }
@@ -88,9 +78,14 @@ footer p {
         font-size: 75%; /* Reduce font size to 75% on mobile devices */
     }
 
+    .pub {
+        width: 40vh;
+        height: 100%;
+    }  
+
     .pub img {
-        width: 10vh; /* Définissez la largeur souhaitée pour les pubs verticales */
-        height: 80vh; /* Hauteur automatique pour maintenir le ratio */
+        width: 40vh; /* Définissez la largeur souhaitée pour les pubs verticales */
+        height: auto; /* Hauteur automatique pour maintenir le ratio */
         border-radius: 10px;
         object-fit: cover; /* Assure que l'image couvre l'espace sans déformation */
     }
