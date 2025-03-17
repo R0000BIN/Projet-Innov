@@ -109,6 +109,18 @@ main {
     margin-bottom: 5px;
     margin-left: 10px;
 }
+.prix{
+    font-size: 18px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+.showPrix{
+    border-radius: 30px;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(100, 100, 100);
+}
 .phoneCharge{
     font-size: 18px;
     margin-bottom: 5px;

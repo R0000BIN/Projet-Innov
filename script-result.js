@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const ConsoEnergy = X[0];  // copie de X[0] qui ne sera pas modifiée
     X[0] = 100.3637 * (1 - Math.exp(-0.2 * X[0]));  // transformation de la consommation énergétique en score sur 100
     const totalScore = X.reduce((a, b) => a + b, 0).toFixed(0); // calcul du score total
-    const facteurs_emission = {"france": 0.055, "europe": 0.250, "monde": 0.522};  // facteur d'émission pour convertir l'énergie en kgCO2
     
     const categories = ["Conso Energétique", "Dépendance", "Immoralité", "Non Pertinence"];  
     const phrases = [
@@ -23,16 +22,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fonction calcul des Emissions de CO2 et des exemples
     function energy_to_CO2(energy_semaine) {  // retourne les émissions en kgCO2 sur 1 mois
-        return energy_semaine * 4 * 0.250;
+        return energy_semaine * 4 * 0.386;
     }
     function energy_to_phoneCharge(energy_semaine){  // retourne le nombre de charge de téléphone sur 1 mois
         return energy_semaine * 4 / 0.015;
     }
+    function energy_to_euros(energy_semaine){  // retourne le coût en euros sur 1 mois
+        return energy_semaine * 4 * 0.09299;
+    }
     function CO2_to_kmVoiture(kgCO2){  //kgCO2/mois
-        return 10;
+        return kgCO2 / (137/1000);
     }
     function CO2_to_treePlanted(kgCO2){  //kgCO2/mois
-        return 10;
+        return kgCO2 * 12 / 25;
     }
 
 
@@ -182,18 +184,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     ///////////////////////////////////////////////////////////////
     /////////////////// Affichage container 3 /////////////////////
-    
 
     // Mise à jour des valeurs des exemples
     const conso = document.getElementById('consoE');
     const emissions = document.getElementById('emissionsCO2');
+    const prixEuros = document.getElementById('prixEuro');
     const nbrPhoneCharge = document.getElementById('nbrPhoneCharge');
     const kmVoiture = document.getElementById('kmVoiture');
     const nbrArbre = document.getElementById('nbrArbre');
 
     conso.textContent = (ConsoEnergy*4).toFixed(2); // consommation énergétique sur 1 mois
     emissions.textContent = energy_to_CO2(ConsoEnergy).toFixed(2);
-    nbrPhoneCharge.textContent = energy_to_phoneCharge(ConsoEnergy).toFixed(2);
-    kmVoiture.textContent = CO2_to_kmVoiture(energy_to_CO2(emissions).toFixed(2));
-    nbrArbre.textContent = CO2_to_treePlanted(energy_to_CO2(emissions)).toFixed(0);
+    prixEuros.textContent = energy_to_euros(ConsoEnergy).toFixed(2);
+    nbrPhoneCharge.textContent = energy_to_phoneCharge(ConsoEnergy).toFixed(0);
+    kmVoiture.textContent = CO2_to_kmVoiture(emissions.textContent).toFixed(0);
+    nbrArbre.textContent = CO2_to_treePlanted(emissions.textContent).toFixed(0);
 });
