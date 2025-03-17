@@ -45,7 +45,7 @@ const dependance_ia = [
 // Thème : Éthique et conséquences
 const ethique_consequences = [
     { name: "Connaissez-vous l’impact environnemental de l’utilisation de Chat GPT ?", type: "ny", score: 4},
-    { name: "Combien pensez-vous qu’une requête standard à ChatGPT émet ?", type: "emission", score: 3},
+    { name: "Combien pensez-vous qu’une requête standard à ChatGPT émet ? (g de CO2)", type: "emission", score: 3},
     { name: "Avez-vous diminué votre utilisation à cause de ça ?", type: "ny", score: 8},
     { name: "Avez-vous déjà utilisé une IA pour tricher à un examen ou un test ?", type: "yn", score: 16},
     { name: "Avez-vous déjà utilisé l'IA pour générer des commentaires positifs sur vos propres posts ?", type: "yn", score: 4},
@@ -160,12 +160,11 @@ function updateButtons(type,Qscore) {
     }
 
     if (type === "emission") {
-        createButton("2g (4 emails)", "rgb(78,170,247)", "rgb(37, 150, 190)", 7);
-        createButton("7g (Production d'une fraise sous serre", "rgb(78,170,247)", "rgb(37, 150, 190)", 4);
-        createButton("15g (6km en TGV)", "rgb(78,170,247)", "rgb(37, 150, 190)", 1);
-        createButton("30g (1 épisode de GameOfThrones en streaming)", "rgb(78,170,247)", "rgb(37, 150, 190)", 3);
-        createButton("50g (30 min d'utilisation d'un grille pain)", "rgb(78,170,247)", "rgb(37, 150, 190)", 2);
-
+        createButton("2g (4 emails sans pièce jointe)", "rgb(78,170,247)", "rgb(37, 150, 190)", 8);
+        createButton("7g (Prod. d'une fraise sous serre", "rgb(78,170,247)", "rgb(37, 150, 190)", 5);
+        createButton("15g (6km en TGV français)", "rgb(78,170,247)", "rgb(37, 150, 190)", 0);
+        createButton("30g (1 heure de streaming)", "rgb(78,170,247)", "rgb(37, 150, 190)", 4);
+        createButton("50g (30min d'utilisation d'un grille pain)", "rgb(78,170,247)", "rgb(37, 150, 190)", 3);
     }
 }
 
