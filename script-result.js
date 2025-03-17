@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
         box.style.display = "flex";
         box.style.alignItems = "center";
         box.style.justifyContent = "center";
+        box.style.fontSize = "18px";
 
         if (score < 25) {
             box.style.backgroundColor = "rgb(117, 201, 117)";

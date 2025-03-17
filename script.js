@@ -49,7 +49,7 @@ const ethique_consequences = [
     { name: "Avez-vous déjà utilisé l'IA pour générer des commentaires positifs sur vos propres posts ?", type: "yn", score: 6},
     { name: "Avez-vous déjà utilisé une IA pour tricher à un examen ou un test ?", type: "yn", score: 18},
     { name : "Combien de fois ?", type: "mulTriche", score: 2},
-    { name: "Avez-vous déjà demandé à une IA de générer du contenu illégal (recette pour faire des space cookies, images pornographiques) ?", type: "yn", score: 20}
+    { name: "Avez-vous déjà demandé à une IA de générer du contenu illégal (recette pour faire des space cookies, comment faire une bombe...) ?", type: "yn", score: 20}
 ];
 
 // Thème : Pertinence

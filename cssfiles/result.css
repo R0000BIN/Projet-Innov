@@ -12,7 +12,7 @@ main {
     flex-grow: 1; /* Permet au contenu de grandir si nécessaire */
 }
 .containers {
-    max-width: 580px;
+    max-width: 90vh;
     margin: 0px;
     padding: 10px;
 }
@@ -30,12 +30,12 @@ main {
 
 /* Score et phrase de description ---------*/
 .description{
-    font-size: 20px;
+    /*font-size: 20px;*/
     margin-bottom: 20px;
     text-align: center;
 }
 .score {
-    font-size: 24px;
+    /*font-size: 24px;*/
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
@@ -44,7 +44,7 @@ main {
 .showScore{
     border-radius: 10px;
     padding: 10px 15px;
-    font-size: 24px;
+    /*font-size: 24px;*/
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center;
@@ -59,8 +59,8 @@ main {
     flex-direction: row;
 }
 .box {
-    width: 150px;
-    height: 100px;
+    width: 20vh;
+    height: auto;
     padding: 20px;
     border-radius: 10px;
     font-size: 20px;
@@ -74,7 +74,7 @@ main {
 
 /* Conseil ---------------------------------*/
 .conso{
-    font-size: 18px;
+    /*font-size: 18px;*/
     margin-bottom: 12px;
     text-align: center; 
     margin-top: 10px;
@@ -82,7 +82,7 @@ main {
 .showConso{
     border-radius: 10px;
     padding: 5px 10px;
-    font-size: 20px;
+    /*font-size: 20px;*/
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center; 
@@ -90,14 +90,14 @@ main {
     color: rgb(32, 32, 32);
 }
 .emissions{
-    font-size: 18px;
+    /*font-size: 18px;*/
     margin-bottom: 25px;
     text-align: center; 
 }
 .showEmissions{
     border-radius: 10px;
     padding: 5px 10px;
-    font-size: 20px;
+    /*font-size: 20px;*/
     font-weight: bold;
     margin-bottom: 20px;
     text-align: center; 
@@ -105,43 +105,43 @@ main {
     color: rgb(32, 32, 32);
 }
 .conseil{
-    font-size: 18px;
+    /*font-size: 18px;*/
     margin-bottom: 5px;
     margin-left: 10px;
 }
 .phoneCharge{
-    font-size: 18px;
+    /*font-size: 18px;*/
     margin-bottom: 5px;
     margin-left: 10px;
 }
 .showPhoneCharge{
     border-radius: 30px;
     padding: 5px 10px;
-    font-size: 20px;
+    /*font-size: 20px;*/
     font-weight: bold;
     background-color: rgb(100, 100, 100);
 }
 .voiture{
-    font-size: 18px;
+    /*font-size: 18px;*/
     margin-bottom: 5px;
     margin-left: 10px;
 }
 .showVoiture{
     border-radius: 30px;
     padding: 5px 10px;
-    font-size: 20px;
+    /*font-size: 20px;*/
     font-weight: bold;
     background-color: rgb(100, 100, 100);
 }
 .arbre{
-    font-size: 18px;
+    /*font-size: 18px;*/
     margin-bottom: 5px;
     margin-left: 10px;
 }
 .showArbre{
     border-radius: 30px;
     padding: 5px 10px;
-    font-size: 20px;
+    /*font-size: 20px;*/
     font-weight: bold;
     background-color: rgb(100, 100, 100);
 }
@@ -157,7 +157,7 @@ main {
     color: white;
     border-radius: 50px;
     padding: 15px 30px;
-    font-size: 25px;
+    /*font-size: 25px;*/
     transition: background-color 0.1s
 }
 .navigation_link:hover {
@@ -169,15 +169,25 @@ main {
     color: white;
     border-radius: 10px;
     padding: 15px 30px;
-    font-size: 14px;
+    /*font-size: 14px;*/
     transition: background-color 0.1s
 }
 .navigation2:hover {
     background-color: rgb(55, 55, 55);
 }
 footer p {
-    font-size: 14px;
+    /*font-size: 14px;*/  
     text-align: center;
 }
 
+footer {
+    margin-top: 5%;
+}
+
+@media (max-width: 600px) {
+    .containers {
+        max-width: 80vh;
+    }
+
+}
 
