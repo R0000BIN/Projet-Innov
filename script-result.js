@@ -173,7 +173,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fonction calcul score intermédiaire
     function intermediateScore(x, y) {
-        return (x * y * Math.sin(135*Math.PI/180 - Math.asin(y/Math.sqrt(x*x + y*y)))) / Math.sqrt(x*x + y*y);
+        // return (x * y * Math.sin(135*Math.PI/180 - Math.asin(y/Math.sqrt(x*x + y*y)))) / Math.sqrt(x*x + y*y);
+        return (x * Math.sin(x/Math.sqrt(x*x + y*y))) / Math.sin(135*Math.PI/180 - Math.acos(x/Math.sqrt(x*x + y*y)));
     }
     // Création du graphe radar
     createRadarChart(X);
