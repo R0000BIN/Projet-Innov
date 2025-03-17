@@ -104,12 +104,24 @@ document.addEventListener("DOMContentLoaded", function () {
     ///////////////////////////////////////////////////////////////
     /////////////////// Affichage container 2 /////////////////////
     // Fonction génération d'un graphe en radar
+    // Check if the screen width is less than 600px
+    
+
+
     function createRadarChart(scores) {
+
+        const isSmallScreen = window.innerWidth < 600;
+
+    // Define labels, splitting them if necessary
+        const labels = isSmallScreen
+        ? ["", ["Conso","Énergétique"], "", ["Dépendance","à l'IA"], "", ["Immoralité","de l'utilisation"], "", ["Non-Pertinence","de l'utilisation"]]
+        : ["", "Consommation Energétique", "", "Dépendance à l'IA", "", "Immoralité de l'utilisation", "", "Non-Pertinence de l'utilisation"];
+
         const ctx = document.getElementById('radarChart').getContext('2d');
         new Chart(ctx, {
             type: 'radar',
             data: {
-                labels: ["", "Consommation Energétique", "", "Dépendance à l'IA", "", "Immoralité de l'utilisation", "", "Non-Pertinence de l'utilisation"],
+                labels: labels,
                 datasets: [{
                     data: [
                         intermediateScore(scores[0], scores[3]), 
@@ -142,25 +154,30 @@ document.addEventListener("DOMContentLoaded", function () {
                 scales: {
                     r: {
                         angleLines: {
-                            color: 'rgba(133, 133, 133, 0.69)' // Couleur des lignes du diagramme
+                            color: 'rgba(255, 255, 255, 0.2)' // Couleur des lignes du diagramme
                         },
                         grid: {
-                            color: 'rgba(255, 252, 252, 0.2)' // Couleur des lignes de la grille
+                            color: 'rgba(255, 255, 255, 0.2)' // Couleur des lignes de la grille
                         },
                         pointLabels: {
-                            color: 'white', // Couleur des labels des points
+                            color: 'rgba(255, 255, 255, 1)', // Couleur des labels des points
                             font: {
-                                size: 14, // Taille du texte des labels
-                                weight: 'bold' // Mettre le texte en gras
+                                weight: 'bold', // Mettre le texte en gras
+                                size: isSmallScreen ? 10 : 14 // Taille du texte des labels
                             }
                         },
                         ticks: {
                             display: true,
                             stepSize: 25, // Affiche seulement 25, 50, 75 et 100
-                            color: 'rgb(2, 2, 2)',
+                            color: 'rgba(255, 255, 255, 1)',
+                            beginAtZero:true,
+                            callback: function(value) { 
+                                return value.toFixed(0); // Ensure whole numbers
+                            }
                         },
-                        suggestedMin: 0,
-                        suggestedMax: 100,
+                        min: 0,
+                        max: 100,
+                        afterDataLimits: (scale) => { scale.max = 100; } // <-- Forces max to 100
                     }
                 },
                 plugins: {
