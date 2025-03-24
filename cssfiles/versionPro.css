@@ -9,3 +9,52 @@ main {
     padding-top: 60px; /* Add padding to avoid overlapping with header */
     padding-bottom: 60px; /* Add padding to avoid overlapping with footer */
 }
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    text-align: center;
+    width: 70%;
+    margin: auto;
+}
+
+.navigation2 {
+    text-decoration: none;
+    background-color: rgb(45, 45, 45);
+    color: white;
+    border-radius: 10px;
+    padding: 15px 30px;
+    /*font-size: 14px;*/
+    transition: background-color 0.1s
+}
+.navigation2:hover {
+    background-color: rgb(55, 55, 55);
+}
+
+.navigation_link {
+    text-decoration: none;
+    background-color: rgb(45, 45, 45);
+    color: white;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 14px;
+    transition: background-color 0.1s
+}
+
+.navigation_link:hover {
+    background-color: rgb(55, 55, 55);
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .imgpro {
+        width: 100%;
+    }
+}
