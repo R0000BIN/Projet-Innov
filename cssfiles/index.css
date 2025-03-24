@@ -53,6 +53,23 @@ main {
     color: white;
 }
 
+.navigationVersionPro {
+    margin-top: 20px;
+    text-decoration: none;
+    background-color: rgb(84, 73, 236);
+    color: white;
+    border-radius: 15px;
+    padding: 10px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.1s, color 0.1s;
+}
+
+.navigationVersionPro:hover {
+    background-color: rgb(60, 52, 168);
+    color: white;
+}
+
 .navigation_link {
     text-decoration: none;
     background-color: rgb(45, 45, 45);

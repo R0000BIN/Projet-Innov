@@ -5,11 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Récupération des scores et initialisation des varaibles, catégories et phrases de description
     const X = JSON.parse(localStorage.getItem("scores")); // récupération des scores
-    const ConsoEnergy = X[0];  // copie de X[0] qui ne sera pas modifiée
-    X[0] = 100.3637 * (1 - Math.exp(-0.2 * X[0]));  // transformation de la consommation énergétique en score sur 100
+    const ConsoEnergy =  JSON.parse(JSON.stringify(X[1]));;  // copie de X[0] qui ne sera pas modifiée
+    X[1] = 100.3637 * (1 - Math.exp(-0.2 * X[1]));  // transformation de la consommation énergétique en score sur 100
     const totalScore = X.reduce((a, b) => a + b, 0).toFixed(0); // calcul du score total
     
-    const categories = ["Conso Energétique", "Dépendance", "Immoralité", "Non Pertinence"];  
+    const categories = ["Dépendance","Conso Energétique", "Immoralité", "Non Pertinence"];  
     const phrases = [
         "«Tu ne connais pas encore l'IA ?»",
         "«Tu es fraîchement défloré de l'IA»",
@@ -114,8 +114,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Define labels, splitting them if necessary
         const labels = isSmallScreen
-        ? ["", ["Conso","Énergétique"], "", ["Dépendance","à l'IA"], "", ["Immoralité","de l'utilisation"], "", ["Non-Pertinence","de l'utilisation"]]
-        : ["", "Consommation Energétique", "", "Dépendance à l'IA", "", "Immoralité de l'utilisation", "", "Non-Pertinence de l'utilisation"];
+        ? ["", ["Dépendance","à l'IA"], "", ["Conso","Énergétique"], "", ["Immoralité","de l'utilisation"], "", ["Non-Pertinence","de l'utilisation"]]
+        : ["", "Dépendance à l'IA", "", "Consommation Énergétique", "", "Immoralité de l'utilisation", "", "Non-Pertinence de l'utilisation"];
 
         const ctx = document.getElementById('radarChart').getContext('2d');
         new Chart(ctx, {

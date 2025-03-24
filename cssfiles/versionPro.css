@@ -1,0 +1,11 @@
+main {
+    display: flex;
+    flex-direction: column; /* Disposition en colonne */
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    gap: 60px; /* Ajoute un espace entre les éléments */
+    position: relative; /* Position relative pour le positionnement des pubs */
+    padding-top: 60px; /* Add padding to avoid overlapping with header */
+    padding-bottom: 60px; /* Add padding to avoid overlapping with footer */
+}
